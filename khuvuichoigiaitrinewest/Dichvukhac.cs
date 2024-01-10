@@ -400,6 +400,7 @@ namespace khuvuichoigiaitrinewest
         private void Dichvukhac_Load(object sender, EventArgs e)
         {
             Load_dgvdv_dichvukhac();
+            //
         }
     }
 }
