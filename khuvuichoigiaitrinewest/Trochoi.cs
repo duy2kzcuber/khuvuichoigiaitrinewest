@@ -69,9 +69,17 @@ namespace khuvuichoigiaitrinewest
                 string p_dateclose = dateTimeclose.Text.Trim();
                 int p_giavenl = int.Parse(textgiavenglon.Text);
                 int p_giavetreem =int.Parse(textgiavetreem.Text);
+                string p_mota = textmota.Text.Trim();
                 string p_tt = comboBoxtinhtrang.Text.Trim();
-                if(textgiavenglon.Text=="") p_giavenl=0;
-                if(textgiavetreem.Text=="") p_giavetreem=0;
+                string p_anh = openFileDialog1.FileName.ToString().Trim();
+                 textanh.Text  = p_anh;
+
+                if(p_ma=="" || p_ten=="" || p_theloai==""||p_giavenl==null||p_giavetreem== null||p_mota=="" || p_tt == "" || p_anh == "" || guna2PictureBox1.Image == null)
+                {
+                    MessageBox.Show("BẮT BUỘC LIỀN HẾT THÔNG TIN");
+                    return;
+                }
+                
                 if (Checktrungma(p_ma))
                 {
                     MessageBox.Show("Ma nha xuat ban da ton tai");
@@ -84,14 +92,13 @@ namespace khuvuichoigiaitrinewest
                     con.Open();
                 }
                 
-                string sql = "Insert dv_khutrochoi Values('" + p_ma + "',N'" + p_ten + "',N'" + p_theloai + "','" + p_dateopen + "','" + p_dateclose + "','" + p_giavenl + "','" + p_giavetreem + "','" + p_tt + "')";
+                string sql = "Insert dv_khutrochoi Values('" + p_ma + "',N'" + p_ten + "',N'" + p_theloai + "','" + p_dateopen + "','" + p_dateclose + "','" + p_giavenl + "','" + p_giavetreem + "',N'" + p_tt + "','"+p_mota+"','"+p_anh+"')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 con.Close();
                 MessageBox.Show("Them moi thanh cong!");
                 Load_dgvdv_khutrochoi();
-                UpdateSoLuongKhuBaoTri();
             }
 
             catch
@@ -123,7 +130,18 @@ namespace khuvuichoigiaitrinewest
             con.Close();
             MessageBox.Show("Xoa thanh cong!");
             Load_dgvdv_khutrochoi();
-            UpdateSoLuongKhuBaoTri();
+            textma.Text = "";
+            textten.Text = "";
+            texttheloai.Text = "";
+            dateTimeopen.Text = "";
+            dateTimeclose.Text = "";
+            textgiavenglon.Text = "";
+            textgiavetreem.Text = "";
+            comboBoxtinhtrang.Text = "";
+            textmota.Text = "";
+            openFileDialog1.FileName = "";
+            textanh.Text = "";
+            guna2PictureBox1.Image = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -135,14 +153,17 @@ namespace khuvuichoigiaitrinewest
             string p_dateclose = dateTimeclose.Text.Trim();
             int p_giavenl = int.Parse(textgiavenglon.Text);
             int p_giavetreem = int.Parse(textgiavetreem.Text);
+            string p_mota = textmota.Text.Trim();
             string p_tt = comboBoxtinhtrang.Text.Trim();
+            string p_anh = openFileDialog1.FileName.ToString().Trim();
+            textanh.Text = p_anh;
             if (textgiavenglon.Text == "") p_giavenl = 0;
             if (textgiavetreem.Text == "") p_giavetreem = 0;
             if (con.State == ConnectionState.Closed)
                 con.Open();
             textma.Enabled = true;
 
-            string sql = "Update dv_khutrochoi set tentrochoi=N'" + p_ten + "',theloai=N'" + p_theloai + "',tgmo='" + p_dateopen + "',tgdong='" + p_dateclose + "',giavenguoilon='" + p_giavenl + "',giavetreem='" + p_giavetreem + "',tinhtrang='" + p_tt + "' where matrochoi ='" + p_ma + "'";
+            string sql = "Update dv_khutrochoi set tentrochoi=N'" + p_ten + "',theloai=N'" + p_theloai + "',tgmo='" + p_dateopen + "',tgdong='" + p_dateclose + "',giavenguoilon='" + p_giavenl + "',giavetreem='" + p_giavetreem + "',tinhtrang=N'" + p_tt + "',mota='"+p_mota+"',anh='"+p_anh+"' where matrochoi ='" + p_ma + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
@@ -153,7 +174,6 @@ namespace khuvuichoigiaitrinewest
             con.Close();
             MessageBox.Show("Sua moi thanh cong!");
             Load_dgvdv_khutrochoi();
-            UpdateSoLuongKhuBaoTri();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -166,8 +186,21 @@ namespace khuvuichoigiaitrinewest
             dateTimeclose.Text = dataGridView2.Rows[i].Cells[4].Value.ToString();
             textgiavenglon.Text = dataGridView2.Rows[i].Cells[5].Value.ToString();
             textgiavetreem.Text = dataGridView2.Rows[i].Cells[6].Value.ToString();
-             comboBoxtinhtrang.Text= dataGridView2.Rows[i].Cells[7].Value.ToString();
-            
+            comboBoxtinhtrang.Text= dataGridView2.Rows[i].Cells[7].Value.ToString();
+            textmota.Text = dataGridView2.Rows[i].Cells[8].Value.ToString();
+            openFileDialog1.FileName = dataGridView2.Rows[i].Cells[9].Value.ToString();
+            textanh.Text = openFileDialog1.FileName.ToString();
+
+            if (openFileDialog1.FileName != "")
+            {
+                openFileDialog1.FileName = dataGridView2.Rows[i].Cells[9].Value.ToString();
+                guna2PictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+            else
+            {
+                guna2PictureBox1.Image = null;
+            }
+
             textma.Enabled = false;
         }
 
@@ -207,8 +240,6 @@ namespace khuvuichoigiaitrinewest
         private void Trochoi_Load(object sender, EventArgs e)
         {
             Load_dgvdv_khutrochoi();
-            int soLuongKhuBaoTri = DemSoLuongKhuBaoTri();
-            txtsoluong.Text = soLuongKhuBaoTri.ToString();
         }
         private void ExportExcel(DataTable tb, string sheetname)
         {
@@ -230,7 +261,7 @@ namespace khuvuichoigiaitrinewest
         oSheet.Name = sheetname;
             // Tạo phần đầu nếu muốn
 
-            e_excel.Range head = oSheet.get_Range("A1", "H1");
+            e_excel.Range head = oSheet.get_Range("A1", "J1");
         head.MergeCells = true;
             head.Value2 = "DANH SÁCH THÔNG TIN KHU VUI CHƠI";
             head.Font.Bold = true;// IN DAM
@@ -263,14 +294,20 @@ namespace khuvuichoigiaitrinewest
             e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
             cl8.Value2 = "TINH TRẠNG";
             cl8.ColumnWidth = 40.0;
-            
+            e_excel.Range cl9 = oSheet.get_Range("I3", "I3");
+            cl9.Value2 = "MO TA";
+            cl9.ColumnWidth = 40.0;
+            e_excel.Range c20 = oSheet.get_Range("J3", "J3");
+            c20.Value2 = "LINK ANH";
+            c20.ColumnWidth = 40.0;
+
             //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
             //cl6.Value2 = "NGÀY THI";
             //cl6.ColumnWidth = 15.0;
             //Microsoft.Office.Interop.Excel.Range cl6_1 = oSheet.get_Range("F4", "F1000");
             //cl6_1.Columns.NumberFormat = "dd/mm/yyyy";
 
-            e_excel.Range rowHead = oSheet.get_Range("A3", "H3");
+            e_excel.Range rowHead = oSheet.get_Range("A3", "J3");
         rowHead.Font.Bold = true;
             // Kẻ viền
             rowHead.Borders.LineStyle = e_excel.Constants.xlSolid;
@@ -316,20 +353,7 @@ range.Borders.LineStyle = e_excel.Constants.xlSolid;
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textma.Enabled = true;
-            string p_ma = textma.Text.Trim();
-            string p_ten = textten.Text.Trim();
-            string p_theloai = texttheloai.Text.Trim();
-            string p_dateopen = dateTimeopen.Text.Trim();
-            string p_dateclose = dateTimeclose.Text.Trim();
-            int p_giavenl = int.Parse(textgiavenglon.Text);
-            int p_giavetreem = int.Parse(textgiavetreem.Text);
-            string p_tt = comboBoxtinhtrang.Text.Trim();
-            if (textgiavenglon.Text == "") p_giavenl = 0;
-            if (textgiavetreem.Text == "") p_giavetreem = 0;
-            if (con.State == ConnectionState.Closed)
-                con.Open();
-            textma.Enabled = true;
+            
             // b3 tao doi tuong command de lay du lieu bang nxb
             string sql = "Select * From dv_khutrochoi";
             //string sql = "Select * from dv_khutrochoi  where matrochoi like '%" + p_ma + "%' and tentrochoi  like N'%" + p_ten + "%' and theloai like N'%" + p_theloai + "%' and tgmo like '%" + p_dateopen + "%' and tgdong like '%" + p_dateclose + "%' and tinhtrang like N'%" + p_tt + "%'";
@@ -346,34 +370,26 @@ range.Borders.LineStyle = e_excel.Constants.xlSolid;
 
 
         }
-        private int DemSoLuongKhuBaoTri()
-        {
-            // Bước 1: Mở kết nối nếu nó chưa được mở
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
 
-            // Bước 2: Tạo câu lệnh SQL để đếm số lượng khu bảo trì
-            string sql = "SELECT COUNT(*) FROM dv_khutrochoi WHERE tinhtrang = N'Bảo trì'";
-            SqlCommand cmd = new SqlCommand(sql, con);
-
-            // Bước 3: Thực hiện câu lệnh và trả về kết quả
-            int soLuongKhuBaoTri = (int)cmd.ExecuteScalar();
-
-            // Bước 4: Đóng kết nối
-            con.Close();
-
-            return soLuongKhuBaoTri;
-        }
-        private void UpdateSoLuongKhuBaoTri()
-        {
-            int soLuongKhuBaoTri = DemSoLuongKhuBaoTri();
-            txtsoluong.Text = soLuongKhuBaoTri.ToString();
-        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "mo file anh";
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != "")
+            {
+
+                guna2PictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+            else
+            {
+                guna2PictureBox1.Image = null;
+            }
+            
         }
     }
 }

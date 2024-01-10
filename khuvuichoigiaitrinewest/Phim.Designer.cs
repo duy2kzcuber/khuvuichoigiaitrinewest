@@ -52,7 +52,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TRO = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textmota = new System.Windows.Forms.TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.cbo_tt = new System.Windows.Forms.ComboBox();
@@ -68,8 +68,7 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtsoluong = new System.Windows.Forms.TextBox();
+            this.textanh = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.TRO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -300,9 +299,9 @@
             // TRO
             // 
             this.TRO.BackColor = System.Drawing.SystemColors.Control;
-            this.TRO.Controls.Add(this.txtsoluong);
+            this.TRO.Controls.Add(this.textanh);
             this.TRO.Controls.Add(this.label7);
-            this.TRO.Controls.Add(this.textBox1);
+            this.TRO.Controls.Add(this.textmota);
             this.TRO.Controls.Add(this.guna2PictureBox1);
             this.TRO.Controls.Add(this.guna2Button1);
             this.TRO.Controls.Add(this.cbo_tt);
@@ -325,7 +324,6 @@
             this.TRO.Controls.Add(this.label8);
             this.TRO.Controls.Add(this.label3);
             this.TRO.Controls.Add(this.label4);
-            this.TRO.Controls.Add(this.label10);
             this.TRO.Controls.Add(this.label9);
             this.TRO.Controls.Add(this.label5);
             this.TRO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,13 +347,13 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "mổ tả";
             // 
-            // textBox1
+            // textmota
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(770, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 20;
+            this.textmota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textmota.Location = new System.Drawing.Point(770, 138);
+            this.textmota.Name = "textmota";
+            this.textmota.Size = new System.Drawing.Size(100, 24);
+            this.textmota.TabIndex = 20;
             // 
             // guna2PictureBox1
             // 
@@ -374,21 +372,21 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(962, 149);
+            this.guna2Button1.Location = new System.Drawing.Point(963, 142);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(104, 37);
             this.guna2Button1.TabIndex = 18;
             this.guna2Button1.Text = "ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // cbo_tt
             // 
             this.cbo_tt.FormattingEnabled = true;
             this.cbo_tt.Items.AddRange(new object[] {
-            "open",
-            "close",
-            "service",
-            "soon"});
-            this.cbo_tt.Location = new System.Drawing.Point(134, 125);
+            "đóng",
+            "mở",
+            "bảo trì"});
+            this.cbo_tt.Location = new System.Drawing.Point(134, 132);
             this.cbo_tt.Name = "cbo_tt";
             this.cbo_tt.Size = new System.Drawing.Size(112, 26);
             this.cbo_tt.TabIndex = 9;
@@ -433,7 +431,7 @@
             this.xuatfile.ForeColor = System.Drawing.Color.White;
             this.xuatfile.Image = global::khuvuichoigiaitrinewest.Properties.Resources.Export2;
             this.xuatfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.xuatfile.Location = new System.Drawing.Point(854, 185);
+            this.xuatfile.Location = new System.Drawing.Point(846, 188);
             this.xuatfile.Margin = new System.Windows.Forms.Padding(4);
             this.xuatfile.Name = "xuatfile";
             this.xuatfile.Size = new System.Drawing.Size(213, 48);
@@ -445,7 +443,7 @@
             // texttheloai
             // 
             this.texttheloai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texttheloai.Location = new System.Drawing.Point(421, 122);
+            this.texttheloai.Location = new System.Drawing.Point(421, 132);
             this.texttheloai.Margin = new System.Windows.Forms.Padding(4);
             this.texttheloai.Name = "texttheloai";
             this.texttheloai.Size = new System.Drawing.Size(112, 24);
@@ -460,7 +458,7 @@
             this.xoa.ForeColor = System.Drawing.Color.White;
             this.xoa.Image = global::khuvuichoigiaitrinewest.Properties.Resources.Trash2;
             this.xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.xoa.Location = new System.Drawing.Point(628, 185);
+            this.xoa.Location = new System.Drawing.Point(620, 187);
             this.xoa.Margin = new System.Windows.Forms.Padding(4);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(218, 49);
@@ -507,7 +505,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(296, 122);
+            this.label9.Location = new System.Drawing.Point(296, 135);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 16);
@@ -539,24 +537,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label10
+            // textanh
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(280, 166);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 16);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Số lượng bảo trì";
-            // 
-            // txtsoluong
-            // 
-            this.txtsoluong.Location = new System.Drawing.Point(421, 153);
-            this.txtsoluong.Multiline = true;
-            this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(108, 31);
-            this.txtsoluong.TabIndex = 22;
+            this.textanh.Location = new System.Drawing.Point(876, 154);
+            this.textanh.Name = "textanh";
+            this.textanh.Size = new System.Drawing.Size(81, 24);
+            this.textanh.TabIndex = 22;
+            this.textanh.Visible = false;
+            this.textanh.TextChanged += new System.EventHandler(this.textanh_TextChanged);
             // 
             // Phim
             // 
@@ -609,7 +597,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textmota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -620,7 +608,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.TextBox txtsoluong;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textanh;
     }
 }
