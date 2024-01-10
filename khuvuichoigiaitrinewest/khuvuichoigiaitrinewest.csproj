@@ -216,6 +216,9 @@
     <EmbeddedResource Include="Trochoi.resx">
       <DependentUpon>Trochoi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ve_dichvukhac.resx">
+      <DependentUpon>Ve_dichvukhac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ve_trochoi.resx">
       <DependentUpon>ve_trochoi.cs</DependentUpon>
     </EmbeddedResource>

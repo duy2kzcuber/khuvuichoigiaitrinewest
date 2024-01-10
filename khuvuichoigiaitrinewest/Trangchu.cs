@@ -298,6 +298,15 @@ namespace khuvuichoigiaitrinewest
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = !panel1.Visible;
+            if(button1.Text=="<<")
+            {
+                button1.Text = ">>";
+
+            }
+            else { button1.Text = "<<"; }
+        }
     }
 }

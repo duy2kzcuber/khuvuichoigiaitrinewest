@@ -16,7 +16,7 @@ namespace khuvuichoigiaitrinewest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new tt_khachhang());
+            Application.Run(new Trangchu());
         }
     }
 }
