@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using e_excel = Microsoft.Office.Interop.Excel;
 
@@ -42,13 +36,14 @@ namespace khuvuichoigiaitrinewest
             dt = Thuvien.Hienthi(sql);
             DataRow r = dt.NewRow();
             r["tendiadiem"] = "Chọn tên khu";
-            r["makhu"] = "";
+
             dt.Rows.InsertAt(r, 0);
             cbo_khu.DataSource = dt;
             cbo_khu.DisplayMember = "tendiadiem";
             cbo_khu.ValueMember = "tendiadiem";
 
         }
+
         private void Load_dgv()
         {
             string sql = "Select * From ve_thamquan";
@@ -67,6 +62,12 @@ namespace khuvuichoigiaitrinewest
                 string p_tt = cbo_tt.Text.Trim();
                 string p_tgban = dtp_tgban.Text.Trim();
                 string p_tgdong = dtp_tgdong.Text.Trim();
+                string p_gianl = txt_gianglon.Text.Trim(); // gia ve nguoi lon
+                string p_giatre = txt_giatreem.Text.Trim(); //gia ve tre em
+                string p_slnl = txt_slnglon.Text.Trim(); // so luong nguoi lon
+                string p_slte = txt_sltreem.Text.Trim(); // so luong tre em
+                if (p_slnl == "") p_slnl = "0";
+                if (p_slte == "") p_slte = "0";
                 //bat loi: 
                 if (p_mave == "")
                 {
@@ -80,6 +81,8 @@ namespace khuvuichoigiaitrinewest
                     cbo_khu.Focus();
                     return;
                 }
+                int a = int.Parse(p_gianl) * int.Parse(p_slnl) + int.Parse(p_giatre) * int.Parse(p_slte);
+                string p_tongtien = a.ToString();
                 //bool check = Thuvien.checktrungma(p_mave, "ve_trochoi", "mave");
                 if (checktrungma(p_mave))
                 {
@@ -88,7 +91,7 @@ namespace khuvuichoigiaitrinewest
                     return;
                 }
                 //b2 : dung thu vien, doi tuong "thucthi" de ket noi den db va tao doi tuong cmd
-                string sql = "insert ve_thamquan Values(N'" + p_tenkhu + "', N'" + p_mave + "', N'" + p_tt + "', '" + p_tgban + "', '" + p_tgdong + "') ";
+                string sql = "insert ve_thamquan Values(N'" + p_tenkhu + "', N'" + p_mave + "', N'" + p_tt + "', '" + p_tgban + "', '" + p_tgdong + "', '" + p_gianl + "', '" + p_giatre + "', '" + p_slnl + "', '" + p_slte + "', '" + p_tongtien + "') ";
                 DataTable dt = new DataTable();
                 Thuvien.Thucthi(sql);
                 Load_dgv();
@@ -106,22 +109,7 @@ namespace khuvuichoigiaitrinewest
             load_cbo_tenkhu();
         }
 
-        private void btn_sua_Click(object sender, EventArgs e)
-        {
-            //b1: lay du lieu tu cac control
-            string p_tenkhu = cbo_khu.SelectedValue.ToString();
-            string p_mave = txt_mave.Text.ToString();
-            string p_tt = cbo_tt.Text.Trim();
-            string p_tgban = dtp_tgban.Text.Trim();
-            string p_tgdong = dtp_tgdong.Text.Trim(); 
-            //b2 : dung thu vien, doi tuong "thucthi" de ket noi den db va tao doi tuong cmd
-            string sql = "update ve_thamquan set tenkhu = N'" + p_tenkhu + "' , trangthai= N'" + p_tt + "', thoigianban= '" + p_tgban + "', thoigiandong= '" + p_tgdong + "' where mave = '" + p_mave + "'";
 
-            Thuvien.Thucthi(sql);
-            Load_dgv();
-            txt_mave.Enabled = true;
-            MessageBox.Show("Sửa thành công!");
-        }
 
         private void dgv_vethamquan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -131,15 +119,25 @@ namespace khuvuichoigiaitrinewest
             cbo_tt.Text = dgv_vethamquan.Rows[i].Cells[2].Value.ToString();
             dtp_tgban.Text = dgv_vethamquan.Rows[i].Cells[3].Value.ToString();
             dtp_tgdong.Text = dgv_vethamquan.Rows[i].Cells[4].Value.ToString();
+            txt_gianglon.Text = dgv_vethamquan.Rows[i].Cells[5].Value.ToString();
+            txt_giatreem.Text = dgv_vethamquan.Rows[i].Cells[6].Value.ToString();
+            txt_slnglon.Text = dgv_vethamquan.Rows[i].Cells[7].Value.ToString();
+            txt_sltreem.Text = dgv_vethamquan.Rows[i].Cells[8].Value.ToString();
+            txt_tongtien.Text = dgv_vethamquan.Rows[i].Cells[9].Value.ToString();
+            txt_mave.Enabled = false;
         }
 
-        private void btn_xoa_Click(object sender, EventArgs e)
+        private void cbo_khu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string p_mave = txt_mave.Text.Trim();
-            string sql = "Delete ve_thamquan Where mave= '" + p_mave + "'";
-            Thuvien.Thucthi(sql);
-            Load_dgv();
-            MessageBox.Show("Xóa thành công");
+            string p_tenkhu = cbo_khu.Text.ToString();
+            string sql = " Select * From dv_khuthamquan where tendiadiem = N'"+p_tenkhu+"'";
+           // string sql = "Select * From dv_khuthamquan where tendiadiem= N'Khu 1'";
+            DataTable dt = Thuvien.Hienthi(sql);
+            if (dt.Rows.Count > 0)
+            {
+                txt_gianglon.Text = dt.Rows[0]["giavenguoilon"].ToString();
+                txt_giatreem.Text = dt.Rows[0]["giavetreem"].ToString();
+            }
         }
 
         private void btn_timkiem_Click(object sender, EventArgs e)
@@ -178,7 +176,7 @@ namespace khuvuichoigiaitrinewest
 
             e_excel.Range head = oSheet.get_Range("A1", "E1");
             head.MergeCells = true;
-            head.Value2 = "THÔNG TIN VÉ TRÒ CHƠI";
+            head.Value2 = "THÔNG TIN VÉ PHIM";
             head.Font.Bold = true;
             head.Font.Name = "Tahoma";
             head.Font.Size = "16";
@@ -188,7 +186,7 @@ namespace khuvuichoigiaitrinewest
             cl1.Value2 = "MÃ VÉ";
             cl1.ColumnWidth = 15;
             e_excel.Range cl2 = oSheet.get_Range("B3", "B3");
-            cl2.Value2 = "TÊN KHU";
+            cl2.Value2 = "TÊN PHIM";
 
             cl2.ColumnWidth = 25.0;
             e_excel.Range cl3 = oSheet.get_Range("C3", "C3");
@@ -200,12 +198,21 @@ namespace khuvuichoigiaitrinewest
             e_excel.Range cl5 = oSheet.get_Range("E3", "E3");
             cl5.Value2 = "THỜI GIAN ĐÓNG";
             cl5.ColumnWidth = 40.0;
-
-            //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
-            //cl6.Value2 = "NGÀY THI";
-            //cl6.ColumnWidth = 15.0;
-            //Microsoft.Office.Interop.Excel.Range cl6_1 = oSheet.get_Range("F4", "F1000");
-            //cl6_1.Columns.NumberFormat = "dd/mm/yyyy";
+            e_excel.Range cl6 = oSheet.get_Range("F3", "F3");
+            cl6.Value2 = "GIÁ VÉ NGƯỜI LỚN";
+            cl6.ColumnWidth = 25.0;
+            e_excel.Range cl7 = oSheet.get_Range("G3", "G3");
+            cl7.Value2 = "GIÁ VÉ TRẺ EM";
+            cl7.ColumnWidth = 25.0;
+            e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
+            cl8.Value2 = "SỐ LƯỢNG NGƯỜI LỚN";
+            cl8.ColumnWidth = 25.0;
+            e_excel.Range cl9 = oSheet.get_Range("I3", "I3");
+            cl9.Value2 = "SỐ LƯỢNG TRẺ EM";
+            cl9.ColumnWidth = 25.0;
+            e_excel.Range cl10 = oSheet.get_Range("J3", "J3");
+            cl10.Value2 = "TỔNG TIỀN";
+            cl10.ColumnWidth = 25.0;
 
             e_excel.Range rowHead = oSheet.get_Range("A3", "E3");
             rowHead.Font.Bold = true;
@@ -261,7 +268,7 @@ namespace khuvuichoigiaitrinewest
             string p_tgdong = dtp_tgdong.Text.Trim();
 
             //string sql = "Select * From ve_thamquan Where mave like '%" + p_mave + "%' and tenkhu like N'%" + p_tenkhu + "%' and trangthai like  N'%" + p_tt + "%'";
-            string sql = "Select * from ve_thamquan"; 
+            string sql = "Select * from ve_thamquan";
             // DataTable dt = new DataTable();
             // dt=Thuvien.Hienthi(sql);
             if (con.State == ConnectionState.Closed)
@@ -277,6 +284,11 @@ namespace khuvuichoigiaitrinewest
             con.Close();
 
             ExportExcel(dt, "Ve tham quan");
+        }
+
+        private void cbo_tt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
