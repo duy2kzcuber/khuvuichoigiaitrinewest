@@ -167,17 +167,7 @@ namespace khuvuichoigiaitrinewest
         private void button4_Click(object sender, EventArgs e)
         {
 
-            textmakhu.Enabled = true;
-            string p_ma1 = textmakhu.Text.Trim();
-            string p_ten = textdiadiem.Text.Trim();
-            string p_theloai = texttheloai.Text.Trim();
-            string p_dateopen = dateTimeopen.Text.Trim();
-            string p_dateclose = dateTimeclose.Text.Trim();
-            int p_giavenl = int.Parse(textgiavenguoilon.Text);
-            int p_giavetreem = int.Parse(textgiavetreem.Text);
-            string p_tt = comboBoxtinhtrang.Text.Trim();
-            if (textgiavenguoilon.Text == "") p_giavenl = 0;
-            if (textgiavetreem.Text == "") p_giavetreem = 0;
+            
             // b3 tao doi tuong command de lay du lieu bang nxb
             string sql = "Select * from dv_khuthamquan  ";
             // tao doi tuonf dataadapter de lay du lieu kq tu commmand

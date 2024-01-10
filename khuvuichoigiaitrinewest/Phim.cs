@@ -322,17 +322,7 @@ namespace khuvuichoigiaitrinewest
         private void xuatfile_Click(object sender, EventArgs e)
         {
 
-            string p_ma1 = textma.Text.Trim();
-            string p_ten = texttenphim.Text.Trim();
-            string p_theloai = texttheloai.Text.Trim();
-            string p_dateopen = dateTimeopen.Text.Trim();
-            string p_dateclose = dateTimeclose.Text.Trim();
-            int p_giavenl = int.Parse(textgiavenguoilon.Text);
-            int p_giavetreem = int.Parse(textgiavetreem.Text);
-            string p_mota = textmota.Text.Trim();
-            string p_tt = cbo_tt.Text.Trim();
-            if (textgiavenguoilon.Text == "") p_giavenl = 0;
-            if (textgiavetreem.Text == "") p_giavetreem = 0;
+            
             // b3 tao doi tuong command de lay du lieu bang nxb
             string sql = "Select * from dv_rapchieuphim  ";
             // tao doi tuonf dataadapter de lay du lieu kq tu commmand

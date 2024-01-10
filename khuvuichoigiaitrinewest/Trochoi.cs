@@ -353,21 +353,7 @@ range.Borders.LineStyle = e_excel.Constants.xlSolid;
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textma.Enabled = true;
-            string p_ma = textma.Text.Trim();
-            string p_ten = textten.Text.Trim();
-            string p_theloai = texttheloai.Text.Trim();
-            string p_dateopen = dateTimeopen.Text.Trim();
-            string p_dateclose = dateTimeclose.Text.Trim();
-            int p_giavenl = int.Parse(textgiavenglon.Text);
-            int p_giavetreem = int.Parse(textgiavetreem.Text);
-            string p_tt = comboBoxtinhtrang.Text.Trim();
-            string p_mota= textmota.Text.Trim();
-            if (textgiavenglon.Text == "") p_giavenl = 0;
-            if (textgiavetreem.Text == "") p_giavetreem = 0;
-            if (con.State == ConnectionState.Closed)
-                con.Open();
-            textma.Enabled = true;
+            
             // b3 tao doi tuong command de lay du lieu bang nxb
             string sql = "Select * From dv_khutrochoi";
             //string sql = "Select * from dv_khutrochoi  where matrochoi like '%" + p_ma + "%' and tentrochoi  like N'%" + p_ten + "%' and theloai like N'%" + p_theloai + "%' and tgmo like '%" + p_dateopen + "%' and tgdong like '%" + p_dateclose + "%' and tinhtrang like N'%" + p_tt + "%'";

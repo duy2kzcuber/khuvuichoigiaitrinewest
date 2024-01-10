@@ -104,7 +104,7 @@ namespace khuvuichoigiaitrinewest
                 }
                 if (Checktrungma(p_ma1))
                 {
-                    MessageBox.Show("Ma phim ban da ton tai");
+                    MessageBox.Show("Ma dich vu ban da ton tai");
                     textma.Focus();
                     return;
                 }
@@ -159,7 +159,7 @@ namespace khuvuichoigiaitrinewest
                 con.Open();
             textma.Enabled = true;
 
-            string sql = "Update dv_khac set ten_dv=N'" + p_ten + "',theloai=N'" + p_theloai + "',tg_mo='" + p_dateopen + "',tg_dong='" + p_dateclose + "',giave_nguoilon='" + p_giavenl + "',giave_treem='" + p_giavetreem + "',tinhtrang=N'" + p_tt + "',mota=N'" + p_mota + "', anh='" + p_anh + "' where ma_dv ='" + p_ma1 + "'";
+            string sql = "Update dv_khac set ten_dv=N'" + p_ten + "',theloai=N'" + p_theloai + "',thoigianmo='" + p_dateopen + "',thoigiandong='" + p_dateclose + "',giavenguoilon='" + p_giavenl + "',giavetreem='" + p_giavetreem + "',tinhtrang=N'" + p_tt + "',mota=N'" + p_mota + "', anh='" + p_anh + "' where ma_dv ='" + p_ma1 + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
@@ -373,17 +373,11 @@ namespace khuvuichoigiaitrinewest
 
         private void xuatfile_Click(object sender, EventArgs e)
         {
-            string p_ma1 = textma.Text.Trim();
-            string p_ten = texttendv.Text.Trim();
-            string p_theloai = texttheloai.Text.Trim();
-            string p_dateopen = dateTimeopen.Text.Trim();
-            string p_dateclose = dateTimeclose.Text.Trim();
-            int p_giavenl = int.Parse(textgiavenguoilon.Text);
-            int p_giavetreem = int.Parse(textgiavetreem.Text);
-            string p_mota = textmota.Text.Trim();
-            string p_tt = cbo_tt.Text.Trim();
-            if (textgiavenguoilon.Text == "") p_giavenl = 0;
-            if (textgiavetreem.Text == "") p_giavetreem = 0;
+
+           
+
+            
+
             // b3 tao doi tuong command de lay du lieu bang nxb
             string sql = "Select * from dv_khac  ";
             // tao doi tuonf dataadapter de lay du lieu kq tu commmand
