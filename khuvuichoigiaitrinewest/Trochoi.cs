@@ -91,6 +91,7 @@ namespace khuvuichoigiaitrinewest
                 con.Close();
                 MessageBox.Show("Them moi thanh cong!");
                 Load_dgvdv_khutrochoi();
+                UpdateSoLuongKhuBaoTri();
             }
 
             catch
@@ -122,6 +123,7 @@ namespace khuvuichoigiaitrinewest
             con.Close();
             MessageBox.Show("Xoa thanh cong!");
             Load_dgvdv_khutrochoi();
+            UpdateSoLuongKhuBaoTri();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -151,6 +153,7 @@ namespace khuvuichoigiaitrinewest
             con.Close();
             MessageBox.Show("Sua moi thanh cong!");
             Load_dgvdv_khutrochoi();
+            UpdateSoLuongKhuBaoTri();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -204,6 +207,8 @@ namespace khuvuichoigiaitrinewest
         private void Trochoi_Load(object sender, EventArgs e)
         {
             Load_dgvdv_khutrochoi();
+            int soLuongKhuBaoTri = DemSoLuongKhuBaoTri();
+            txtsoluong.Text = soLuongKhuBaoTri.ToString();
         }
         private void ExportExcel(DataTable tb, string sheetname)
         {
@@ -341,7 +346,31 @@ range.Borders.LineStyle = e_excel.Constants.xlSolid;
 
 
         }
+        private int DemSoLuongKhuBaoTri()
+        {
+            // Bước 1: Mở kết nối nếu nó chưa được mở
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
 
+            // Bước 2: Tạo câu lệnh SQL để đếm số lượng khu bảo trì
+            string sql = "SELECT COUNT(*) FROM dv_khutrochoi WHERE tinhtrang = N'Bảo trì'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            // Bước 3: Thực hiện câu lệnh và trả về kết quả
+            int soLuongKhuBaoTri = (int)cmd.ExecuteScalar();
+
+            // Bước 4: Đóng kết nối
+            con.Close();
+
+            return soLuongKhuBaoTri;
+        }
+        private void UpdateSoLuongKhuBaoTri()
+        {
+            int soLuongKhuBaoTri = DemSoLuongKhuBaoTri();
+            txtsoluong.Text = soLuongKhuBaoTri.ToString();
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

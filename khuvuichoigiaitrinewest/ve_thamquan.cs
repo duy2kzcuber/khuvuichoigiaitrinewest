@@ -176,7 +176,7 @@ namespace khuvuichoigiaitrinewest
 
             e_excel.Range head = oSheet.get_Range("A1", "E1");
             head.MergeCells = true;
-            head.Value2 = "THÔNG TIN VÉ TRÒ CHƠI";
+            head.Value2 = "THÔNG TIN VÉ PHIM";
             head.Font.Bold = true;
             head.Font.Name = "Tahoma";
             head.Font.Size = "16";
@@ -186,7 +186,7 @@ namespace khuvuichoigiaitrinewest
             cl1.Value2 = "MÃ VÉ";
             cl1.ColumnWidth = 15;
             e_excel.Range cl2 = oSheet.get_Range("B3", "B3");
-            cl2.Value2 = "TÊN KHU";
+            cl2.Value2 = "TÊN PHIM";
 
             cl2.ColumnWidth = 25.0;
             e_excel.Range cl3 = oSheet.get_Range("C3", "C3");
@@ -198,12 +198,21 @@ namespace khuvuichoigiaitrinewest
             e_excel.Range cl5 = oSheet.get_Range("E3", "E3");
             cl5.Value2 = "THỜI GIAN ĐÓNG";
             cl5.ColumnWidth = 40.0;
-
-            //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
-            //cl6.Value2 = "NGÀY THI";
-            //cl6.ColumnWidth = 15.0;
-            //Microsoft.Office.Interop.Excel.Range cl6_1 = oSheet.get_Range("F4", "F1000");
-            //cl6_1.Columns.NumberFormat = "dd/mm/yyyy";
+            e_excel.Range cl6 = oSheet.get_Range("F3", "F3");
+            cl6.Value2 = "GIÁ VÉ NGƯỜI LỚN";
+            cl6.ColumnWidth = 25.0;
+            e_excel.Range cl7 = oSheet.get_Range("G3", "G3");
+            cl7.Value2 = "GIÁ VÉ TRẺ EM";
+            cl7.ColumnWidth = 25.0;
+            e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
+            cl8.Value2 = "SỐ LƯỢNG NGƯỜI LỚN";
+            cl8.ColumnWidth = 25.0;
+            e_excel.Range cl9 = oSheet.get_Range("I3", "I3");
+            cl9.Value2 = "SỐ LƯỢNG TRẺ EM";
+            cl9.ColumnWidth = 25.0;
+            e_excel.Range cl10 = oSheet.get_Range("J3", "J3");
+            cl10.Value2 = "TỔNG TIỀN";
+            cl10.ColumnWidth = 25.0;
 
             e_excel.Range rowHead = oSheet.get_Range("A3", "E3");
             rowHead.Font.Bold = true;

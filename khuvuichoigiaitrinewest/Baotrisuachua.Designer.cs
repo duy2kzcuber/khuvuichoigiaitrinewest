@@ -31,7 +31,6 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dateend = new System.Windows.Forms.DateTimePicker();
             this.datestart = new System.Windows.Forms.DateTimePicker();
-            this.lichbaotri = new System.Windows.Forms.DateTimePicker();
             this.cbkhubaotri = new System.Windows.Forms.ComboBox();
             this.btexportfile = new Guna.UI2.WinForms.Guna2Button();
             this.btxoa = new Guna.UI2.WinForms.Guna2Button();
@@ -55,10 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewbaotri = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dataGridViewbaotri = new System.Windows.Forms.DataGridView();
             this.manbt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tennbt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sodienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +66,12 @@
             this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.txtsoluong = new System.Windows.Forms.TextBox();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +79,9 @@
             // 
             this.guna2GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.White;
+            this.guna2GroupBox1.Controls.Add(this.txtsoluong);
             this.guna2GroupBox1.Controls.Add(this.dateend);
             this.guna2GroupBox1.Controls.Add(this.datestart);
-            this.guna2GroupBox1.Controls.Add(this.lichbaotri);
             this.guna2GroupBox1.Controls.Add(this.cbkhubaotri);
             this.guna2GroupBox1.Controls.Add(this.btexportfile);
             this.guna2GroupBox1.Controls.Add(this.btxoa);
@@ -119,7 +119,7 @@
             // 
             // dateend
             // 
-            this.dateend.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateend.Location = new System.Drawing.Point(775, 171);
             this.dateend.Name = "dateend";
             this.dateend.Size = new System.Drawing.Size(227, 25);
@@ -127,31 +127,24 @@
             // 
             // datestart
             // 
-            this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datestart.Location = new System.Drawing.Point(580, 171);
             this.datestart.Name = "datestart";
             this.datestart.Size = new System.Drawing.Size(158, 25);
             this.datestart.TabIndex = 6;
-            // 
-            // lichbaotri
-            // 
-            this.lichbaotri.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.lichbaotri.Location = new System.Drawing.Point(377, 171);
-            this.lichbaotri.Name = "lichbaotri";
-            this.lichbaotri.Size = new System.Drawing.Size(164, 25);
-            this.lichbaotri.TabIndex = 6;
             // 
             // cbkhubaotri
             // 
             this.cbkhubaotri.FormattingEnabled = true;
             this.cbkhubaotri.Items.AddRange(new object[] {
             "Khu vui chơi",
-            "Khu thăm quan",
+            "Khu tham quan",
             "Rạp chiếu phim"});
-            this.cbkhubaotri.Location = new System.Drawing.Point(377, 232);
+            this.cbkhubaotri.Location = new System.Drawing.Point(377, 171);
             this.cbkhubaotri.Name = "cbkhubaotri";
             this.cbkhubaotri.Size = new System.Drawing.Size(164, 25);
             this.cbkhubaotri.TabIndex = 5;
+            this.cbkhubaotri.SelectedIndexChanged += new System.EventHandler(this.cbkhubaotri_SelectedIndexChanged);
             // 
             // btexportfile
             // 
@@ -433,9 +426,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(846, 151);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 17);
+            this.label8.Size = new System.Drawing.Size(99, 17);
             this.label8.TabIndex = 1;
-            this.label8.Text = "Giờ kết thúc";
+            this.label8.Text = "Ngày kết thúc";
             this.label8.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
@@ -445,9 +438,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(612, 151);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 17);
+            this.label7.Size = new System.Drawing.Size(92, 17);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Giờ bắt đầu";
+            this.label7.Text = "Ngày bắt đầu";
             this.label7.Click += new System.EventHandler(this.label5_Click);
             // 
             // label5
@@ -455,11 +448,11 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(421, 151);
+            this.label5.Location = new System.Drawing.Point(410, 211);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 17);
+            this.label5.Size = new System.Drawing.Size(111, 17);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Lịch bảo trì";
+            this.label5.Text = "Số lượng bảo trì";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
@@ -479,7 +472,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(422, 211);
+            this.label3.Location = new System.Drawing.Point(419, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 1;
@@ -518,6 +511,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên nhà bảo trì";
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.ImageRotate = 0F;
+            this.PictureBox1.Location = new System.Drawing.Point(10, 75);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(342, 245);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox1.TabIndex = 0;
+            this.PictureBox1.TabStop = false;
+            // 
             // dataGridViewbaotri
             // 
             this.dataGridViewbaotri.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -540,31 +543,6 @@
             this.dataGridViewbaotri.Size = new System.Drawing.Size(1222, 232);
             this.dataGridViewbaotri.TabIndex = 8;
             this.dataGridViewbaotri.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewbaotri_CellContentClick);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.ImageRotate = 0F;
-            this.PictureBox1.Location = new System.Drawing.Point(10, 75);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(342, 245);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox1.TabIndex = 0;
-            this.PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::khuvuichoigiaitrinewest.Properties.Resources.hinh_nen_mau_nau_dep_1__1_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1454, 728);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // manbt
             // 
@@ -646,6 +624,29 @@
             this.anh.Name = "anh";
             this.anh.Width = 125;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::khuvuichoigiaitrinewest.Properties.Resources.hinh_nen_mau_nau_dep_1__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1454, 728);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // txtsoluong
+            // 
+            this.txtsoluong.Location = new System.Drawing.Point(377, 232);
+            this.txtsoluong.Multiline = true;
+            this.txtsoluong.Name = "txtsoluong";
+            this.txtsoluong.Size = new System.Drawing.Size(164, 36);
+            this.txtsoluong.TabIndex = 7;
+            // 
             // Baotrisuachua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -659,8 +660,8 @@
             this.Load += new System.EventHandler(this.Baotrisuachua_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -691,7 +692,6 @@
         private System.Windows.Forms.DataGridView dataGridViewbaotri;
         private System.Windows.Forms.ComboBox cbkhubaotri;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DateTimePicker lichbaotri;
         private System.Windows.Forms.DateTimePicker datestart;
         private System.Windows.Forms.DateTimePicker dateend;
         private System.Windows.Forms.Label label8;
@@ -709,5 +709,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn noidung;
         private System.Windows.Forms.DataGridViewTextBoxColumn anh;
+        private System.Windows.Forms.TextBox txtsoluong;
     }
 }

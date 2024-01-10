@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.TRO = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.comboBoxtinhtrang = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimeclose = new System.Windows.Forms.DateTimePicker();
@@ -37,6 +41,16 @@
             this.textmakhu = new System.Windows.Forms.TextBox();
             this.textdiadiem = new System.Windows.Forms.TextBox();
             this.dataGridViewthamquan = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.texttheloai = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textgiavetreem = new System.Windows.Forms.TextBox();
@@ -54,35 +68,25 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtsoluong = new System.Windows.Forms.TextBox();
             this.TRO.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewthamquan)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TRO
             // 
             this.TRO.BackColor = System.Drawing.SystemColors.Control;
+            this.TRO.Controls.Add(this.txtsoluong);
             this.TRO.Controls.Add(this.label7);
             this.TRO.Controls.Add(this.textBox1);
             this.TRO.Controls.Add(this.guna2PictureBox1);
             this.TRO.Controls.Add(this.guna2Button1);
             this.TRO.Controls.Add(this.comboBoxtinhtrang);
+            this.TRO.Controls.Add(this.label10);
             this.TRO.Controls.Add(this.label9);
             this.TRO.Controls.Add(this.dateTimeclose);
             this.TRO.Controls.Add(this.dateTimeopen);
@@ -115,6 +119,48 @@
             this.TRO.Text = "THĂM QUAN";
             this.TRO.Enter += new System.EventHandler(this.TRO_Enter);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(612, 137);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "mổ tả";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(735, 137);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 24);
+            this.textBox1.TabIndex = 18;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(920, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(173, 111);
+            this.guna2PictureBox1.TabIndex = 17;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(950, 126);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
+            this.guna2Button1.TabIndex = 16;
+            this.guna2Button1.Text = "ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // comboBoxtinhtrang
             // 
             this.comboBoxtinhtrang.FormattingEnabled = true;
@@ -123,7 +169,7 @@
             "đóng",
             "mở",
             "soon"});
-            this.comboBoxtinhtrang.Location = new System.Drawing.Point(143, 132);
+            this.comboBoxtinhtrang.Location = new System.Drawing.Point(143, 122);
             this.comboBoxtinhtrang.Name = "comboBoxtinhtrang";
             this.comboBoxtinhtrang.Size = new System.Drawing.Size(121, 26);
             this.comboBoxtinhtrang.TabIndex = 14;
@@ -132,11 +178,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(296, 132);
+            this.label9.Location = new System.Drawing.Point(287, 165);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 16);
+            this.label9.Size = new System.Drawing.Size(116, 16);
             this.label9.TabIndex = 8;
-            this.label9.Text = "thể loại";
+            this.label9.Text = "Số lượng bảo trì";
             // 
             // dateTimeclose
             // 
@@ -215,10 +261,90 @@
             this.dataGridViewthamquan.TabIndex = 5;
             this.dataGridViewthamquan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewthamquan_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "makhu";
+            this.Column1.HeaderText = "mã khu";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "tendiadiem";
+            this.Column2.HeaderText = "tên dịa điểm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "theloai";
+            this.Column8.HeaderText = "thể loại";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "tgmo";
+            this.Column5.HeaderText = "thời gian mở";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "tgdong";
+            this.Column4.HeaderText = "thời gian đóng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "giavenguoilon";
+            this.Column6.HeaderText = "giá vé người lớn";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "giavetreem";
+            this.Column7.HeaderText = "giá vé trẻ em";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "tinhtrang";
+            this.Column3.HeaderText = "tình trạng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "mota)";
+            this.Column9.HeaderText = "mô tả";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "ảnh";
+            this.Column10.HeaderText = "ảnh";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
             // texttheloai
             // 
             this.texttheloai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texttheloai.Location = new System.Drawing.Point(421, 132);
+            this.texttheloai.Location = new System.Drawing.Point(421, 124);
             this.texttheloai.Margin = new System.Windows.Forms.Padding(4);
             this.texttheloai.Name = "texttheloai";
             this.texttheloai.Size = new System.Drawing.Size(112, 24);
@@ -357,7 +483,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(50, 132);
+            this.label3.Location = new System.Drawing.Point(50, 122);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
@@ -413,127 +539,23 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // guna2Button1
+            // label10
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(950, 126);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
-            this.guna2Button1.TabIndex = 16;
-            this.guna2Button1.Text = "ảnh";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(296, 132);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 16);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "thể loại";
             // 
-            // guna2PictureBox1
+            // txtsoluong
             // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(920, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(173, 111);
-            this.guna2PictureBox1.TabIndex = 17;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(612, 137);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "mổ tả";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(735, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 18;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "makhu";
-            this.Column1.HeaderText = "mã khu";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "tendiadiem";
-            this.Column2.HeaderText = "tên dịa điểm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "theloai";
-            this.Column8.HeaderText = "thể loại";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "tgmo";
-            this.Column5.HeaderText = "thời gian mở";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "tgdong";
-            this.Column4.HeaderText = "thời gian đóng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "giavenguoilon";
-            this.Column6.HeaderText = "giá vé người lớn";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "giavetreem";
-            this.Column7.HeaderText = "giá vé trẻ em";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "tinhtrang";
-            this.Column3.HeaderText = "tình trạng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "mota)";
-            this.Column9.HeaderText = "mô tả";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "ảnh";
-            this.Column10.HeaderText = "ảnh";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
+            this.txtsoluong.Location = new System.Drawing.Point(421, 156);
+            this.txtsoluong.Multiline = true;
+            this.txtsoluong.Name = "txtsoluong";
+            this.txtsoluong.Size = new System.Drawing.Size(146, 32);
+            this.txtsoluong.TabIndex = 20;
             // 
             // Thamquan
             // 
@@ -547,10 +569,10 @@
             this.Load += new System.EventHandler(this.Thamquan_Load);
             this.TRO.ResumeLayout(false);
             this.TRO.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewthamquan)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -597,5 +619,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.TextBox txtsoluong;
+        private System.Windows.Forms.Label label10;
     }
 }

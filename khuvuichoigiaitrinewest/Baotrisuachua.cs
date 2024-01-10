@@ -47,17 +47,17 @@ namespace khuvuichoigiaitrinewest
             string p_manbt = txtmanbt.Text.Trim();
             string p_tennbt = txttennbt.Text.Trim();
             string p_sodienthoai = txtsodienthoai.Text.Trim();
-            string p_khubaotri =cbkhubaotri.Text.Trim();
-            string p_lichbaotri = lichbaotri.Text.Trim();
+            string p_khubaotri = cbkhubaotri.Text.Trim();
+            string p_soluongbt = txtsoluong.Text.Trim();
             string p_datestart = datestart.Text.Trim();
-            string p_dateend=dateend.Text.Trim();
+            string p_dateend = dateend.Text.Trim();
             int p_gia;
             if (txtgia.Text == "") p_gia = 0;
-             else p_gia = int.Parse(txtgia.Text.ToString());
-            string p_noidung=txtnoidung.Text.Trim();
-            string p_anh=openFileDialog1.FileName.ToString().Trim();
+            else p_gia = int.Parse(txtgia.Text.ToString());
+            string p_noidung = txtnoidung.Text.Trim();
+            string p_anh = openFileDialog1.FileName.ToString().Trim();
             txtanh.Text = p_anh;
-            if(txtgia.Text =="") p_gia=0;
+            if (txtgia.Text == "") p_gia = 0;
             if (Checktrungma(p_manbt))
             {
                 MessageBox.Show("Ma nha bao tri da ton tai");
@@ -69,18 +69,25 @@ namespace khuvuichoigiaitrinewest
                 con.Open();
             }
 
-            string sql = "Insert BAOTRI Values(@manbt,@tennbt,@sodienthoai,@khubaotri,@lichbaotri,@datestart,@dateend,@gia,@noidung,@anh)";
+            string sql = "Insert BAOTRI Values(@manbt,@tennbt,@sodienthoai,@khubaotri,@soluongbt,@datestart,@dateend,@gia,@noidung,@anh)";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@manbt", SqlDbType.NVarChar, 50).Value = p_manbt;
             cmd.Parameters.Add("@tennbt", SqlDbType.NVarChar, 50).Value = p_tennbt;
             cmd.Parameters.Add("@sodienthoai", SqlDbType.NVarChar, 50).Value = p_sodienthoai;
             cmd.Parameters.Add("@khubaotri", SqlDbType.NVarChar, 50).Value = p_khubaotri;
-            cmd.Parameters.Add("@lichbaotri", SqlDbType.NVarChar, 50).Value = p_lichbaotri;
+            cmd.Parameters.Add("@soluongbt", SqlDbType.NVarChar, 50).Value = p_soluongbt;
             cmd.Parameters.Add("@datestart", SqlDbType.NVarChar, 50).Value = p_datestart;
             cmd.Parameters.Add("@dateend", SqlDbType.NVarChar, 50).Value = p_dateend;
             cmd.Parameters.Add("@gia", SqlDbType.NVarChar, 50).Value = p_gia;
             cmd.Parameters.Add("@noidung", SqlDbType.NVarChar, 50).Value = p_noidung;
             cmd.Parameters.Add("@anh", SqlDbType.NVarChar, 100).Value = p_anh;
+            int p_soluong;
+
+            if (!int.TryParse(p_soluongbt, out p_soluong) || p_soluong <= 0)
+            {
+                MessageBox.Show("Số lượng bảo trì phải lớn hơn 0");
+                return;
+            }
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
@@ -139,7 +146,7 @@ namespace khuvuichoigiaitrinewest
             string p_tennbt = txttennbt.Text.Trim();
             string p_sodienthoai = txtsodienthoai.Text.Trim();
             string p_khubaotri = cbkhubaotri.Text.Trim();
-            string p_lichbaotri = lichbaotri.Text.Trim();
+            string p_soluongbt = txtsoluong.Text.Trim();
             string p_datestart = datestart.Text.Trim();
             string p_dateend = dateend.Text.Trim();
             int p_gia = int.Parse(txtgia.Text);
@@ -150,7 +157,7 @@ namespace khuvuichoigiaitrinewest
                 con.Open();
             }
             //Tao doi tuong Command de thuc hien sua
-            string sql = "Update BAOTRI set tennbt=N'" + p_tennbt + "',sodienthoai=N'" + p_sodienthoai + "',khubaotri= N'" + p_khubaotri + "',lichbaotri='" + p_lichbaotri + "',datestart='" + p_datestart + "',dateend='" + p_dateend + "',gia='" + p_gia + "',noidung='" + p_noidung + "',anh='"+p_anh+"' where manbt ='" + p_manbt + "'";
+            string sql = "Update BAOTRI set tennbt=N'" + p_tennbt + "',sodienthoai=N'" + p_sodienthoai + "',khubaotri= N'" + p_khubaotri + "',soluongbt='" + p_soluongbt + "',datestart='" + p_datestart + "',dateend='" + p_dateend + "',gia='" + p_gia + "',noidung='" + p_noidung + "',anh='" + p_anh + "' where manbt ='" + p_manbt + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
@@ -171,7 +178,7 @@ namespace khuvuichoigiaitrinewest
             txttennbt.Text = dataGridViewbaotri.Rows[i].Cells[1].Value.ToString();
             txtsodienthoai.Text = dataGridViewbaotri.Rows[i].Cells[2].Value.ToString();
             cbkhubaotri.Text = dataGridViewbaotri.Rows[i].Cells[3].Value.ToString();
-            lichbaotri.Text = dataGridViewbaotri.Rows[i].Cells[4].Value.ToString();
+            txtsoluong.Text = dataGridViewbaotri.Rows[i].Cells[4].Value.ToString();
             datestart.Text = dataGridViewbaotri.Rows[i].Cells[5].Value.ToString();
             dateend.Text = dataGridViewbaotri.Rows[i].Cells[6].Value.ToString();
             txtgia.Text = dataGridViewbaotri.Rows[i].Cells[7].Value.ToString();
@@ -251,14 +258,14 @@ namespace khuvuichoigiaitrinewest
             cl4.Value2 = "KHU BẢO TRÌ";
             cl4.ColumnWidth = 40.0;
             e_excel.Range cl5 = oSheet.get_Range("E3", "E3");
-            cl5.Value2 = "LỊCH BẢO TRÌ";
+            cl5.Value2 = "SỐ LƯỢNG BẢO TRÌ";
             cl5.ColumnWidth = 40.0;
 
             e_excel.Range cl6 = oSheet.get_Range("F3", "F3");
-            cl6.Value2 = "GIỜ BẮT ĐẦU";
+            cl6.Value2 = "NGÀY BẮT ĐẦU";
             cl6.ColumnWidth = 40.0;
             e_excel.Range cl7 = oSheet.get_Range("G3", "G3");
-            cl7.Value2 = "GIỜ KÊT THÚC";
+            cl7.Value2 = "NGÀY KÊT THÚC";
             cl7.ColumnWidth = 40.0;
             e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
             cl8.Value2 = "GIÁ";
@@ -328,7 +335,7 @@ namespace khuvuichoigiaitrinewest
             string p_tennbt = txttennbt.Text.Trim();
             string p_sodienthoai = txtsodienthoai.Text.Trim();
             string p_khubaotri = cbkhubaotri.Text.Trim();
-            string p_lichbaotri = lichbaotri.Text.Trim();
+            string p_soluong = txtsoluong.Text.Trim();
             string p_datestart = datestart.Text.Trim();
             string p_dateend = dateend.Text.Trim();
             string p_gia = txtgia.Text.Trim();
@@ -375,6 +382,36 @@ namespace khuvuichoigiaitrinewest
         {
             Load_dgvBAOTRI();
             openFileDialog1.FileName = null;
+        }
+
+        private void cbkhubaotri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string table = "";
+
+
+            switch (cbkhubaotri.Text)
+            {
+                case "Khu trò chơi":
+                    table = "dv_khutrochoi";
+                    break;
+                case "Khu tham quan":
+                    table = "dv_khuthamquan";
+                    break;
+                case "Rạp chiếu phim":
+                    table = "dv_rapchieuphim";
+                    break;
+                default:
+                    return;
+                    break;
+
+            }
+            string sql = "SELECT COUNT(*) FROM " + table + " WHERE tinhtrang = N'bảo trì'";
+            if (con.State == ConnectionState.Closed) con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            int kq = (int)cmd.ExecuteScalar();
+            cmd.Dispose();
+            con.Close();
+            txtsoluong.Text = kq.ToString();
         }
     }
 }
