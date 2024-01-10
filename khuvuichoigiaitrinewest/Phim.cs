@@ -78,9 +78,16 @@ namespace khuvuichoigiaitrinewest
                 string p_dateclose = dateTimeclose.Text.Trim();
                 int p_giavenl = int.Parse(textgiavenguoilon.Text);
                 int p_giavetreem = int.Parse(textgiavetreem.Text);
+                string p_mota = textmota.Text.Trim();
                 string p_tt = cbo_tt.Text.Trim();
-                if (textgiavenguoilon.Text == "") p_giavenl = 0;
-                if (textgiavetreem.Text == "") p_giavetreem = 0;
+                string p_anh = openFileDialog1.FileName.ToString().Trim();
+                textanh.Text = p_anh;
+
+                if (p_ma1 == "" || p_ten == "" || p_theloai == "" || p_giavenl == null || p_giavetreem == null || p_mota == "" || p_tt == "" || p_anh == "" || guna2PictureBox1.Image == null)
+                {
+                    MessageBox.Show("BẮT BUỘC LIỀN HẾT THÔNG TIN");
+                    return;
+                }
                 if (Checktrungma(p_ma1))
                 {
                     MessageBox.Show("Ma phim ban da ton tai");
@@ -93,7 +100,7 @@ namespace khuvuichoigiaitrinewest
                     con.Open();
                 }
 
-                string sql = "Insert dv_rapchieuphim Values('" + p_ma1 + "',N'" + p_ten + "',N'" + p_theloai + "','" + p_dateopen + "','" + p_dateclose + "','" + p_giavenl + "','" + p_giavetreem + "',N'" + p_tt + "')";
+                string sql = "Insert dv_rapchieuphim Values('" + p_ma1 + "',N'" + p_ten + "',N'" + p_theloai + "','" + p_dateopen + "','" + p_dateclose + "','" + p_giavenl + "','" + p_giavetreem + "',N'" + p_tt + "',N'"+p_mota+"','"+p_anh+"')";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -147,7 +154,10 @@ namespace khuvuichoigiaitrinewest
             string p_dateclose = dateTimeclose.Text.Trim();
             int p_giavenl = int.Parse(textgiavenguoilon.Text);
             int p_giavetreem = int.Parse(textgiavetreem.Text);
+            string p_mota = textmota.Text.Trim();
             string p_tt = cbo_tt.Text.Trim();
+            string p_anh = openFileDialog1.FileName.ToString().Trim();
+            textanh.Text = p_anh;
 
             if (textgiavenguoilon.Text == "") p_giavenl = 0;
             if (textgiavetreem.Text == "") p_giavetreem = 0;
@@ -155,7 +165,7 @@ namespace khuvuichoigiaitrinewest
                 con.Open();
             textma.Enabled = true;
 
-            string sql = "Update dv_rapchieuphim set tenphim=N'" + p_ten + "',theloai=N'" + p_theloai + "',tgmo='" + p_dateopen + "',tgdong='" + p_dateclose + "',giavenguoilon='" + p_giavenl + "',giavetreem='" + p_giavetreem + "',tinhtrang=N'" + p_tt + "' where maphim ='" + p_ma1 + "'";
+            string sql = "Update dv_rapchieuphim set tenphim=N'" + p_ten + "',theloai=N'" + p_theloai + "',tgmo='" + p_dateopen + "',tgdong='" + p_dateclose + "',giavenguoilon='" + p_giavenl + "',giavetreem='" + p_giavetreem + "',tinhtrang=N'" + p_tt + "',mota=N'"+p_mota+"', anh='"+p_anh+"' where maphim ='" + p_ma1 + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
@@ -186,6 +196,19 @@ namespace khuvuichoigiaitrinewest
             con.Close();
             MessageBox.Show("Xoa thanh cong!");
             Load_dgvdv_rapchieuphim();
+            textma.Text = "";
+            texttenphim.Text = "";
+            texttheloai.Text = "";
+            dateTimeopen.Text = "";
+            dateTimeclose.Text = "";
+            textgiavenguoilon.Text = "";
+            textgiavetreem.Text = "";
+            cbo_tt.Text = "";
+            textmota.Text = "";
+            openFileDialog1.FileName = "";
+            guna2PictureBox1.Image = null;
+            textanh.Text = "";
+            
         }
         private void ExportExcel(DataTable tb, string sheetname)
         {
@@ -207,7 +230,7 @@ namespace khuvuichoigiaitrinewest
             oSheet.Name = sheetname;
             // Tạo phần đầu nếu muốn
 
-            e_excel.Range head = oSheet.get_Range("A1", "H1");
+            e_excel.Range head = oSheet.get_Range("A1", "J1");
             head.MergeCells = true;
             head.Value2 = "DANH SÁCH RẠP CHIẾU PHIM";
             head.Font.Bold = true;// IN DAM
@@ -240,6 +263,12 @@ namespace khuvuichoigiaitrinewest
             e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
             cl8.Value2 = "TINH TRẠNG";
             cl8.ColumnWidth = 40.0;
+            e_excel.Range cl9 = oSheet.get_Range("I3", "I3");
+            cl9.Value2 = "MO TA";
+            cl9.ColumnWidth = 40.0;
+            e_excel.Range c20 = oSheet.get_Range("J3", "J3");
+            c20.Value2 = "LINK ANH";
+            c20.ColumnWidth = 40.0;
 
             //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
             //cl6.Value2 = "NGÀY THI";
@@ -247,7 +276,7 @@ namespace khuvuichoigiaitrinewest
             //Microsoft.Office.Interop.Excel.Range cl6_1 = oSheet.get_Range("F4", "F1000");
             //cl6_1.Columns.NumberFormat = "dd/mm/yyyy";
 
-            e_excel.Range rowHead = oSheet.get_Range("A3", "H3");
+            e_excel.Range rowHead = oSheet.get_Range("A3", "J3");
             rowHead.Font.Bold = true;
             // Kẻ viền
             rowHead.Borders.LineStyle = e_excel.Constants.xlSolid;
@@ -292,7 +321,7 @@ namespace khuvuichoigiaitrinewest
 
         private void xuatfile_Click(object sender, EventArgs e)
         {
-           
+
             string p_ma1 = textma.Text.Trim();
             string p_ten = texttenphim.Text.Trim();
             string p_theloai = texttheloai.Text.Trim();
@@ -300,7 +329,8 @@ namespace khuvuichoigiaitrinewest
             string p_dateclose = dateTimeclose.Text.Trim();
             int p_giavenl = int.Parse(textgiavenguoilon.Text);
             int p_giavetreem = int.Parse(textgiavetreem.Text);
-            string p_tt = cbo_tt.Text.Trim(); ;
+            string p_mota = textmota.Text.Trim();
+            string p_tt = cbo_tt.Text.Trim();
             if (textgiavenguoilon.Text == "") p_giavenl = 0;
             if (textgiavetreem.Text == "") p_giavetreem = 0;
             // b3 tao doi tuong command de lay du lieu bang nxb
@@ -343,8 +373,41 @@ namespace khuvuichoigiaitrinewest
             textgiavenguoilon.Text = dataGridView2.Rows[i].Cells[5].Value.ToString();
             textgiavetreem.Text = dataGridView2.Rows[i].Cells[6].Value.ToString();
             cbo_tt.Text = dataGridView2.Rows[i].Cells[7].Value.ToString();
+            textmota.Text = dataGridView2.Rows[i].Cells[8].Value.ToString();
+            openFileDialog1.FileName = dataGridView2.Rows[i].Cells[9].Value.ToString();
+            textanh.Text = openFileDialog1.FileName.ToString();
+
+            if (openFileDialog1.FileName != "")
+            {
+                openFileDialog1.FileName = dataGridView2.Rows[i].Cells[9].Value.ToString();
+                guna2PictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+            else
+            {
+                guna2PictureBox1.Image = null;
+            }
 
             textma.Enabled = false;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "mo file anh";
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != "")
+            {
+
+                guna2PictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+            else
+            {
+                guna2PictureBox1.Image = null;
+            }
+        }
+
+        private void textanh_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

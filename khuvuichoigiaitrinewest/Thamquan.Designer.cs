@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.TRO = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textmota = new System.Windows.Forms.TextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.comboBoxtinhtrang = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimeclose = new System.Windows.Forms.DateTimePicker();
@@ -53,11 +56,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.textanh = new System.Windows.Forms.TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,9 +79,10 @@
             // TRO
             // 
             this.TRO.BackColor = System.Drawing.SystemColors.Control;
-            this.TRO.Controls.Add(this.label7);
-            this.TRO.Controls.Add(this.textBox1);
             this.TRO.Controls.Add(this.guna2PictureBox1);
+            this.TRO.Controls.Add(this.textanh);
+            this.TRO.Controls.Add(this.label7);
+            this.TRO.Controls.Add(this.textmota);
             this.TRO.Controls.Add(this.guna2Button1);
             this.TRO.Controls.Add(this.comboBoxtinhtrang);
             this.TRO.Controls.Add(this.label9);
@@ -112,8 +114,41 @@
             this.TRO.Size = new System.Drawing.Size(1116, 616);
             this.TRO.TabIndex = 13;
             this.TRO.TabStop = false;
-            this.TRO.Text = "THĂM QUAN";
+            this.TRO.Text = "THAM QUAN";
             this.TRO.Enter += new System.EventHandler(this.TRO_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(612, 137);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "mổ tả";
+            // 
+            // textmota
+            // 
+            this.textmota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textmota.Location = new System.Drawing.Point(735, 137);
+            this.textmota.Name = "textmota";
+            this.textmota.Size = new System.Drawing.Size(100, 24);
+            this.textmota.TabIndex = 18;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(950, 126);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
+            this.guna2Button1.TabIndex = 16;
+            this.guna2Button1.Text = "ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // comboBoxtinhtrang
             // 
@@ -121,8 +156,7 @@
             this.comboBoxtinhtrang.Items.AddRange(new object[] {
             "bảo trì",
             "đóng",
-            "mở",
-            "soon"});
+            "mở"});
             this.comboBoxtinhtrang.Location = new System.Drawing.Point(143, 132);
             this.comboBoxtinhtrang.Name = "comboBoxtinhtrang";
             this.comboBoxtinhtrang.Size = new System.Drawing.Size(121, 26);
@@ -206,7 +240,7 @@
             this.Column3,
             this.Column9,
             this.Column10});
-            this.dataGridViewthamquan.Location = new System.Drawing.Point(8, 256);
+            this.dataGridViewthamquan.Location = new System.Drawing.Point(28, 257);
             this.dataGridViewthamquan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewthamquan.Name = "dataGridViewthamquan";
             this.dataGridViewthamquan.RowHeadersWidth = 51;
@@ -408,52 +442,27 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // openFileDialog1
+            // textanh
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(950, 126);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
-            this.guna2Button1.TabIndex = 16;
-            this.guna2Button1.Text = "ảnh";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.textanh.Location = new System.Drawing.Point(950, 164);
+            this.textanh.Name = "textanh";
+            this.textanh.Size = new System.Drawing.Size(104, 24);
+            this.textanh.TabIndex = 23;
+            this.textanh.Visible = false;
+            this.textanh.TextChanged += new System.EventHandler(this.textanh_TextChanged);
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(920, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(901, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(173, 111);
-            this.guna2PictureBox1.TabIndex = 17;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(192, 111);
+            this.guna2PictureBox1.TabIndex = 24;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // label7
+            // openFileDialog1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(612, 137);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "mổ tả";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(735, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 18;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Column1
             // 
@@ -521,7 +530,7 @@
             // 
             // Column9
             // 
-            this.Column9.DataPropertyName = "mota)";
+            this.Column9.DataPropertyName = "mota";
             this.Column9.HeaderText = "mô tả";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
@@ -529,7 +538,7 @@
             // 
             // Column10
             // 
-            this.Column10.DataPropertyName = "ảnh";
+            this.Column10.DataPropertyName = "anh";
             this.Column10.HeaderText = "ảnh";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
@@ -582,11 +591,12 @@
         private System.Windows.Forms.ComboBox comboBoxtinhtrang;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textmota;
+        private System.Windows.Forms.TextBox textanh;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;

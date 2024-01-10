@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trochoi));
             this.TRO = new System.Windows.Forms.GroupBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.comboBoxtinhtrang = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textmota = new System.Windows.Forms.TextBox();
             this.texttheloai = new System.Windows.Forms.TextBox();
             this.dateTimeclose = new System.Windows.Forms.DateTimePicker();
             this.dateTimeopen = new System.Windows.Forms.DateTimePicker();
@@ -56,9 +58,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,11 +69,12 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textanh = new System.Windows.Forms.TextBox();
             this.TRO.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TRO
@@ -81,12 +82,13 @@
             this.TRO.AutoSize = true;
             this.TRO.BackColor = System.Drawing.Color.White;
             this.TRO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TRO.Controls.Add(this.textanh);
             this.TRO.Controls.Add(this.guna2PictureBox1);
             this.TRO.Controls.Add(this.guna2Button1);
             this.TRO.Controls.Add(this.comboBoxtinhtrang);
             this.TRO.Controls.Add(this.label7);
             this.TRO.Controls.Add(this.label9);
-            this.TRO.Controls.Add(this.textBox1);
+            this.TRO.Controls.Add(this.textmota);
             this.TRO.Controls.Add(this.texttheloai);
             this.TRO.Controls.Add(this.dateTimeclose);
             this.TRO.Controls.Add(this.dateTimeopen);
@@ -112,10 +114,35 @@
             this.TRO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TRO.Name = "TRO";
             this.TRO.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TRO.Size = new System.Drawing.Size(1301, 685);
+            this.TRO.Size = new System.Drawing.Size(1301, 694);
             this.TRO.TabIndex = 9;
             this.TRO.TabStop = false;
             this.TRO.Text = "TRÒ CHƠI";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(967, 21);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(155, 114);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 14;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(981, 138);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
+            this.guna2Button1.TabIndex = 13;
+            this.guna2Button1.Text = "ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // comboBoxtinhtrang
             // 
@@ -123,8 +150,7 @@
             this.comboBoxtinhtrang.Items.AddRange(new object[] {
             "mở",
             "đóng",
-            "bảo trì",
-            "soon"});
+            "bảo trì"});
             this.comboBoxtinhtrang.Location = new System.Drawing.Point(143, 133);
             this.comboBoxtinhtrang.Name = "comboBoxtinhtrang";
             this.comboBoxtinhtrang.Size = new System.Drawing.Size(112, 26);
@@ -150,13 +176,13 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "thể loại";
             // 
-            // textBox1
+            // textmota
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(792, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 9;
+            this.textmota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textmota.Location = new System.Drawing.Point(792, 138);
+            this.textmota.Name = "textmota";
+            this.textmota.Size = new System.Drawing.Size(100, 24);
+            this.textmota.TabIndex = 9;
             // 
             // texttheloai
             // 
@@ -235,12 +261,12 @@
             this.Column3,
             this.mota,
             this.Column9});
-            this.dataGridView2.Location = new System.Drawing.Point(23, 262);
+            this.dataGridView2.Location = new System.Drawing.Point(23, 271);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1099, 400);
+            this.dataGridView2.Size = new System.Drawing.Size(1126, 400);
             this.dataGridView2.TabIndex = 5;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -428,32 +454,9 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(981, 138);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
-            this.guna2Button1.TabIndex = 13;
-            this.guna2Button1.Text = "ảnh";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(967, 23);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(155, 112);
-            this.guna2PictureBox1.TabIndex = 14;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // Column1
             // 
@@ -529,11 +532,19 @@
             // 
             // Column9
             // 
-            this.Column9.DataPropertyName = "(anh";
+            this.Column9.DataPropertyName = "anh";
             this.Column9.HeaderText = "ảnh";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.Width = 125;
+            // 
+            // textanh
+            // 
+            this.textanh.Location = new System.Drawing.Point(981, 183);
+            this.textanh.Name = "textanh";
+            this.textanh.Size = new System.Drawing.Size(104, 24);
+            this.textanh.TabIndex = 15;
+            this.textanh.Visible = false;
             // 
             // Trochoi
             // 
@@ -549,10 +560,10 @@
             this.Load += new System.EventHandler(this.Trochoi_Load);
             this.TRO.ResumeLayout(false);
             this.TRO.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,7 +597,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textmota;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
@@ -600,5 +611,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn mota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.TextBox textanh;
     }
 }

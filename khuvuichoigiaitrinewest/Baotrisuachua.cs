@@ -378,5 +378,10 @@ namespace khuvuichoigiaitrinewest
             Load_dgvBAOTRI();
             openFileDialog1.FileName = null;
         }
+
+        private void txtanh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

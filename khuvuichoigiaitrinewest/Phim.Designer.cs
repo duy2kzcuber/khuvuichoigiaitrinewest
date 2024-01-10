@@ -31,6 +31,16 @@
             this.textma = new System.Windows.Forms.TextBox();
             this.texttenphim = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textgiavetreem = new System.Windows.Forms.TextBox();
             this.textgiavenguoilon = new System.Windows.Forms.TextBox();
@@ -41,6 +51,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TRO = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textmota = new System.Windows.Forms.TextBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.cbo_tt = new System.Windows.Forms.ComboBox();
             this.dateTimeclose = new System.Windows.Forms.DateTimePicker();
             this.dateTimeopen = new System.Windows.Forms.DateTimePicker();
@@ -54,25 +68,12 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textanh = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.TRO.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textma
@@ -117,6 +118,86 @@
             this.dataGridView2.Size = new System.Drawing.Size(1050, 380);
             this.dataGridView2.TabIndex = 5;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "maphim";
+            this.Column1.HeaderText = "mã phim";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "tenphim";
+            this.Column2.HeaderText = "tên phim";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "theloai";
+            this.Column8.HeaderText = "thể loại";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "tgmo";
+            this.Column5.HeaderText = "thời gian mở";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "tgdong";
+            this.Column4.HeaderText = "thời gian đóng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "giavenguoilon";
+            this.Column6.HeaderText = "giá vé người lớn";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "giavetreem";
+            this.Column7.HeaderText = "giá vé trẻ em";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "tinhtrang";
+            this.Column3.HeaderText = "tình trạng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "mota";
+            this.Column9.HeaderText = "mô tả";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "anh";
+            this.Column10.HeaderText = "ảnh";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
             // 
             // label1
             // 
@@ -218,8 +299,9 @@
             // TRO
             // 
             this.TRO.BackColor = System.Drawing.SystemColors.Control;
+            this.TRO.Controls.Add(this.textanh);
             this.TRO.Controls.Add(this.label7);
-            this.TRO.Controls.Add(this.textBox1);
+            this.TRO.Controls.Add(this.textmota);
             this.TRO.Controls.Add(this.guna2PictureBox1);
             this.TRO.Controls.Add(this.guna2Button1);
             this.TRO.Controls.Add(this.cbo_tt);
@@ -255,14 +337,55 @@
             this.TRO.Text = "PHIM";
             this.TRO.Enter += new System.EventHandler(this.TRO_Enter);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(615, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "mổ tả";
+            // 
+            // textmota
+            // 
+            this.textmota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textmota.Location = new System.Drawing.Point(770, 138);
+            this.textmota.Name = "textmota";
+            this.textmota.Size = new System.Drawing.Size(100, 24);
+            this.textmota.TabIndex = 20;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(932, 23);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(173, 111);
+            this.guna2PictureBox1.TabIndex = 19;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(963, 142);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
+            this.guna2Button1.TabIndex = 18;
+            this.guna2Button1.Text = "ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // cbo_tt
             // 
             this.cbo_tt.FormattingEnabled = true;
             this.cbo_tt.Items.AddRange(new object[] {
-            "open",
-            "close",
-            "service",
-            "soon"});
+            "đóng",
+            "mở",
+            "bảo trì"});
             this.cbo_tt.Location = new System.Drawing.Point(134, 132);
             this.cbo_tt.Name = "cbo_tt";
             this.cbo_tt.Size = new System.Drawing.Size(112, 26);
@@ -308,7 +431,7 @@
             this.xuatfile.ForeColor = System.Drawing.Color.White;
             this.xuatfile.Image = global::khuvuichoigiaitrinewest.Properties.Resources.Export2;
             this.xuatfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.xuatfile.Location = new System.Drawing.Point(854, 185);
+            this.xuatfile.Location = new System.Drawing.Point(846, 188);
             this.xuatfile.Margin = new System.Windows.Forms.Padding(4);
             this.xuatfile.Name = "xuatfile";
             this.xuatfile.Size = new System.Drawing.Size(213, 48);
@@ -335,7 +458,7 @@
             this.xoa.ForeColor = System.Drawing.Color.White;
             this.xoa.Image = global::khuvuichoigiaitrinewest.Properties.Resources.Trash2;
             this.xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.xoa.Location = new System.Drawing.Point(628, 185);
+            this.xoa.Location = new System.Drawing.Point(620, 187);
             this.xoa.Margin = new System.Windows.Forms.Padding(4);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(218, 49);
@@ -414,126 +537,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // guna2PictureBox1
+            // textanh
             // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(932, 23);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(173, 111);
-            this.guna2PictureBox1.TabIndex = 19;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(962, 149);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(104, 37);
-            this.guna2Button1.TabIndex = 18;
-            this.guna2Button1.Text = "ảnh";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(615, 142);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 16);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "mổ tả";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(770, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 24);
-            this.textBox1.TabIndex = 20;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "maphim";
-            this.Column1.HeaderText = "mã phim";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "tenphim";
-            this.Column2.HeaderText = "tên phim";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "theloai";
-            this.Column8.HeaderText = "thể loại";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "tgmo";
-            this.Column5.HeaderText = "thời gian mở";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "tgdong";
-            this.Column4.HeaderText = "thời gian đóng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "giavenguoilon";
-            this.Column6.HeaderText = "giá vé người lớn";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "giavetreem";
-            this.Column7.HeaderText = "giá vé trẻ em";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "tinhtrang";
-            this.Column3.HeaderText = "tình trạng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "mota";
-            this.Column9.HeaderText = "mô tả";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "anh";
-            this.Column10.HeaderText = "ảnh";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
+            this.textanh.Location = new System.Drawing.Point(876, 154);
+            this.textanh.Name = "textanh";
+            this.textanh.Size = new System.Drawing.Size(81, 24);
+            this.textanh.TabIndex = 22;
+            this.textanh.Visible = false;
+            this.textanh.TextChanged += new System.EventHandler(this.textanh_TextChanged);
             // 
             // Phim
             // 
@@ -548,9 +559,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.TRO.ResumeLayout(false);
             this.TRO.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,7 +597,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textmota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -597,5 +608,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.TextBox textanh;
     }
 }

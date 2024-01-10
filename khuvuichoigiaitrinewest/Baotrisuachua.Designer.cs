@@ -55,10 +55,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewbaotri = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dataGridViewbaotri = new System.Windows.Forms.DataGridView();
             this.manbt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tennbt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sodienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +67,11 @@
             this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -414,6 +414,8 @@
             this.txtanh.SelectedText = "";
             this.txtanh.Size = new System.Drawing.Size(229, 51);
             this.txtanh.TabIndex = 2;
+            this.txtanh.Visible = false;
+            this.txtanh.TextChanged += new System.EventHandler(this.txtanh_TextChanged);
             // 
             // label6
             // 
@@ -518,6 +520,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên nhà bảo trì";
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.ImageRotate = 0F;
+            this.PictureBox1.Location = new System.Drawing.Point(10, 75);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(342, 245);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox1.TabIndex = 0;
+            this.PictureBox1.TabStop = false;
+            // 
             // dataGridViewbaotri
             // 
             this.dataGridViewbaotri.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -540,31 +552,6 @@
             this.dataGridViewbaotri.Size = new System.Drawing.Size(1222, 232);
             this.dataGridViewbaotri.TabIndex = 8;
             this.dataGridViewbaotri.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewbaotri_CellContentClick);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.ImageRotate = 0F;
-            this.PictureBox1.Location = new System.Drawing.Point(10, 75);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(342, 245);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox1.TabIndex = 0;
-            this.PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::khuvuichoigiaitrinewest.Properties.Resources.hinh_nen_mau_nau_dep_1__1_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1454, 728);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // manbt
             // 
@@ -646,6 +633,21 @@
             this.anh.Name = "anh";
             this.anh.Width = 125;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::khuvuichoigiaitrinewest.Properties.Resources.hinh_nen_mau_nau_dep_1__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(2, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1454, 728);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // Baotrisuachua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -659,8 +661,8 @@
             this.Load += new System.EventHandler(this.Baotrisuachua_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewbaotri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
