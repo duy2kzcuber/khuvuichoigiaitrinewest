@@ -16,7 +16,7 @@ namespace khuvuichoigiaitrinewest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ve_phim());
+            Application.Run(new ve_thamquan());
         }
     }
 }
