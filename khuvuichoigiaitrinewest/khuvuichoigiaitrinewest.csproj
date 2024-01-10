@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D22D3506-4FB7-403F-9928-08D92308DDA1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>khuvuichoigiaitrinewest</RootNamespace>
+    <AssemblyName>khuvuichoigiaitrinewest</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Documents\Zalo Received Files\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Baotrisuachua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baotrisuachua.Designer.cs">
+      <DependentUpon>Baotrisuachua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Dangnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dangnhap.Designer.cs">
+      <DependentUpon>Dangnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dichvukhac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dichvukhac.Designer.cs">
+      <DependentUpon>Dichvukhac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doanhthu.Designer.cs">
+      <DependentUpon>Doanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thongke.Designer.cs">
+      <DependentUpon>Thongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem.Designer.cs">
+      <DependentUpon>Timkiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tt_danhgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tt_danhgia.Designer.cs">
+      <DependentUpon>tt_danhgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tt_khachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tt_khachhang.Designer.cs">
+      <DependentUpon>tt_khachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tt_nhansu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tt_nhansu.Designer.cs">
+      <DependentUpon>tt_nhansu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Thuvien.cs" />
+    <Compile Include="Trangchu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trangchu.Designer.cs">
+      <DependentUpon>Trangchu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phim.Designer.cs">
+      <DependentUpon>Phim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thamquan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thamquan.Designer.cs">
+      <DependentUpon>Thamquan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trochoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trochoi.Designer.cs">
+      <DependentUpon>Trochoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ve_dichvukhac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ve_dichvukhac.Designer.cs">
+      <DependentUpon>Ve_dichvukhac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ve_sukien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ve_sukien.Designer.cs">
+      <DependentUpon>Ve_sukien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ve_trochoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ve_trochoi.Designer.cs">
+      <DependentUpon>ve_trochoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ve_phim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ve_phim.Designer.cs">
+      <DependentUpon>ve_phim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ve_thamquan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ve_thamquan.Designer.cs">
+      <DependentUpon>ve_thamquan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Baotrisuachua.resx">
+      <DependentUpon>Baotrisuachua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dangnhap.resx">
+      <DependentUpon>Dangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dichvukhac.resx">
+      <DependentUpon>Dichvukhac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timkiem.resx">
+      <DependentUpon>Timkiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tt_danhgia.resx">
+      <DependentUpon>tt_danhgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tt_khachhang.resx">
+      <DependentUpon>tt_khachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tt_nhansu.resx">
+      <DependentUpon>tt_nhansu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phim.resx">
+      <DependentUpon>Phim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thamquan.resx">
+      <DependentUpon>Thamquan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trangchu.resx">
+      <DependentUpon>Trangchu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trochoi.resx">
+      <DependentUpon>Trochoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ve_trochoi.resx">
+      <DependentUpon>ve_trochoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ve_phim.resx">
+      <DependentUpon>ve_phim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ve_thamquan.resx">
+      <DependentUpon>ve_thamquan.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4981457428699_3f9df8612c9ebbf47e0407f09937a9a7 - Copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\377315908_1521789511897082_1171847070850690437_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\376372854_999711554603601_639880986594068149_n1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4981457428699_3f9df8612c9ebbf47e0407f09937a9a7 - Copy1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4984739308084_04ba6d53dea0ea86433a3d0aa2a115a0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUẢN LÍ KHU VUI CHƠI GIẢI TRÍ.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1281150061-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4994133083457_9034e29f6c67d945c0ca7d45ac6edf54.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-nen-mau-nau-dep_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Merry Christmas!.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Merry Christmas! %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Merry Christmas &amp; A Happy New Year! %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVDHT.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy %281%291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Theme Park.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Theme Park 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Law.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confetti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Theme Park1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Theme Park2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5015523938519_fc787f5a38e8ef4c70fa082bde20ed88.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 211848.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 2118481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 2118482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 230050.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Replay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 232523.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 234331.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 234450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-27 2344501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Replay1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Replay2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Synchronize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Synchronize1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image File.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

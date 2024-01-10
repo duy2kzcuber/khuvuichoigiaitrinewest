@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Trash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tools2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tools2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Law" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Law.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Theme Park1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Theme Park1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z4981457428699_3f9df8612c9ebbf47e0407f09937a9a7 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z4981457428699_3f9df8612c9ebbf47e0407f09937a9a7 - Copy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 2344501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 2344501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Theme Park" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Theme Park.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z5015523938519_fc787f5a38e8ef4c70fa082bde20ed88" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z5015523938519_fc787f5a38e8ef4c70fa082bde20ed88.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="giphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Replay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Replay1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tools1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tools1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Merry Christmas! (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Merry Christmas! (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 211848" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 211848.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="377315908_1521789511897082_1171847070850690437_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\377315908_1521789511897082_1171847070850690437_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Merry Christmas!" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Merry Christmas!.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 232523" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 232523.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="istockphoto-1281150061-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-1281150061-612x612.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tools3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tools3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DVDHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DVDHT.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z4994133083457_9034e29f6c67d945c0ca7d45ac6edf54" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z4994133083457_9034e29f6c67d945c0ca7d45ac6edf54.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Theme Park2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Theme Park2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z4981457428699_3f9df8612c9ebbf47e0407f09937a9a7 - Copy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z4981457428699_3f9df8612c9ebbf47e0407f09937a9a7 - Copy1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="giphy (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z4984739308084_04ba6d53dea0ea86433a3d0aa2a115a0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z4984739308084_04ba6d53dea0ea86433a3d0aa2a115a0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thiết kế chưa có tên" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thiết kế chưa có tên.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 2118481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 2118481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 234450" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 234450.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Synchronize1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Synchronize1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tools4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tools4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hinh-nen-mau-nau-dep_1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinh-nen-mau-nau-dep_1 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="giphy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Replay2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Replay2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 2118482" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 2118482.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search Property.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Confetti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Confetti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUẢN LÍ KHU VUI CHƠI GIẢI TRÍ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QUẢN LÍ KHU VUI CHƠI GIẢI TRÍ.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Replay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Replay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thiết kế chưa có tên (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thiết kế chưa có tên (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Merry Christmas &amp; A Happy New Year! (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Merry Christmas &amp; A Happy New Year! (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Theme Park 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Theme Park 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="giphy (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy (1)1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hinh-nen-mau-nau-dep_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinh-nen-mau-nau-dep_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 234331" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 234331.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Synchronize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Synchronize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="376372854_999711554603601_639880986594068149_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\376372854_999711554603601_639880986594068149_n1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ảnh chụp màn hình 2023-12-27 230050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ảnh chụp màn hình 2023-12-27 230050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image File" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image File.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>
